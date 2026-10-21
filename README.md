@@ -1,5 +1,8 @@
 # Aura Lyrics — custom TTML lyrics for Apple Music Web
 
+<img width="1277" height="678" alt="auragextensionprev" src="https://github.com/user-attachments/assets/8921ba05-ee4b-44a8-9c2e-cdbc82426048" />
+
+
 A cinematic lyric overlay for **music.apple.com**, taking visual inspiration from the [Spicy Lyrics](https://github.com/Spikerko/spicy-lyrics) experience for Spotify/Spicetify. This project is an independent implementation written from scratch: it **does not use Spicy Lyrics source code or assets**, and it is **not affiliated with Apple or Spicy Lyrics**.
 
 ## Install in Chrome or Edge (Windows/macOS/Linux)
@@ -25,6 +28,9 @@ If you already installed the previous `My TTML Lyrics` extension, **disable the 
 - Manually choose a track's lyric file if automatic title matching fails.
 - Tap **- / +** to move lyrics earlier/later by 0.25 seconds. The offset is saved separately for each track. Positive values delay the lyrics.
 - **Start sync** begins a fallback timer at 0:00. Only click when the recording *actually starts* if the Apple Music playback clock is unavailable.
+
+<img width="318" height="482" alt="auragextensionextprev" src="https://github.com/user-attachments/assets/af2da841-509b-4ac2-b019-79780295503e" />
+
 
 ## What works and what doesn't
 
