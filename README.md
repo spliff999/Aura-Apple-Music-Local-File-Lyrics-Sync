@@ -33,24 +33,3 @@ If you already installed the previous `My TTML Lyrics` extension, **disable the 
 **Limitations:** This is a separate overlay *on the Apple Music website*. Apple does not expose an official API to inject personal TTML into its own synced lyric panel. It does not change the native Windows Apple Music app, iOS/iPadOS Apple Music, or Apple's catalog. Album art and synchronized playback information are read from supported browser media metadata/MusicKit/HTML audio elements when exposed; page updates may break detection. The manual timer is a workaround, not real-time detection. Matching is by cleaned track title, not fingerprinting; multiple tracks with identical titles need manual choice.
 
 **Privacy:** No lyric files are uploaded; their parsed timing and text remain in `chrome.storage.local` in the browser. The extension has no analytics, no remote backend, and no request for Apple login credentials. It runs only on `https://music.apple.com/*`.
-
-## Troubleshooting
-
-- **Extension icon appears but lyric window doesn't:** Refresh music.apple.com after installing, then click the floating `LYRICS` pill.
-- **No matched lyrics:** Open the extension popup and import the `.ttml`. Use the footer's lyrics dropdown if the track title and filename differ.
-- **Timing is off:** Check that your `.ttml` is aligned to that exact song edition, then use footer `-`/`+` offset controls.
-- **No clock detected:** Play a track in Apple Music Web. If the site doesn't expose playback time, click `Start sync` *exactly at 0:00*; the extension cannot infer the true playback position in that case.
-- **How to return to Apple Music:** Click the **X** in the lyric overlay; use the floating `LYRICS` pill to reopen it.
-- **TTML import not working:** Confirm the XML is well formed and has valid begin/end timestamps. Files containing only static text are not synchronizable.
-
-## Files
-
-- `manifest.json` — Chrome/Edge Manifest V3 configuration.
-- `overlay.js`, `overlay.css` — animated lyric UI and settings.
-- `page-bridge.js` — read-only playback information from Apple Music Web.
-- `popup.html`, `popup.js` — local TTML library manager.
-- `ttml-parser.js` — TTML timing parser.
-
-## Testing
-
-The popup import was checked with a real user-supplied timed TTML (42 lines). The overlay's rendering, active-line highlighting, and UI behavior were smoke-tested in Chromium using simulated playback data. **Actual Apple Music Web integration was not tested with a signed-in account**, so automatic track/clock detection needs to be checked in your browser.
