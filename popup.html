@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Aura Lyrics</title>
+<style>
+*{box-sizing:border-box}html{color-scheme:dark}body{width:410px;margin:0;background:#0c0a14;color:#f7f3ff;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px}
+button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:2px solid #b395ff;outline-offset:2px}
+main{padding:22px 23px 24px}.head{display:flex;justify-content:space-between;align-items:center}.brand{display:flex;gap:11px;align-items:center;font-weight:850;font-size:17px;letter-spacing:.13em}.brand svg{height:25px;width:25px;color:#b89aff}.brand b{color:#b89aff;font-weight:500}.chip{font-size:9px;color:#bfb3da;background:#8f68ec22;border:1px solid #ae8ffb47;border-radius:20px;padding:7px 9px;letter-spacing:.15em;font-weight:780}
+h1{font-size:27px;letter-spacing:-.04em;line-height:1.15;margin:27px 0 9px}p{line-height:1.55;color:#b2a9c7;margin:0}.glowline{height:1px;background:linear-gradient(90deg,#bb9cf6,transparent);margin:21px 0}
+.drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;border:1px dashed #8a68c582;border-radius:17px;padding:25px 15px;margin-top:21px;background:radial-gradient(ellipse at center,#66429421,transparent 70%),#151122;transition:background .2s,border-color .2s;cursor:pointer}
+.drop:hover,.drop.dragover{border-color:#c3aeff;background:#34234780}.drop strong{font-size:14px}.drop small{font-size:11px;color:#aaa1bd}.drop svg{width:29px;height:29px;color:#bea4ff}.drop input{display:none}
+.controls{display:flex;gap:9px;margin-top:12px}.btn{border:1px solid #ffffff23;border-radius:11px;background:#ffffff0a;color:#f4ecff;padding:11px 13px;font-weight:650;font-size:12px;flex:1}.btn:hover{background:#ffffff1b}.btn.primary{background:#ad8ffa21;border-color:#bca0ff67;color:#d6c4ff}
+.counter{display:flex;align-items:center;justify-content:space-between;margin-top:27px}.counter b{font-size:13px}.counter span{font-size:10px;letter-spacing:.07em;color:#a496bc}.counter .badge{font-size:11px;border:1px solid #ffffff2c;padding:5px 9px;color:#ddd3f1;border-radius:999px}
+.search{width:100%;margin:14px 0 10px;border:1px solid #ffffff1d;background:#171421;color:#fff;border-radius:10px;padding:11px 13px;outline:none}.search:focus{border-color:#a38aff}
+.library{max-height:185px;overflow:auto;display:grid;gap:6px}.item{display:flex;align-items:center;gap:11px;padding:10px;background:#ffffff0a;border:1px solid #ffffff10;border-radius:12px}.note{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;background:#9474f421;color:#b59cff;font-size:17px}.info{min-width:0;flex:1;display:grid;gap:4px}.info strong{font-size:12px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}.info small{color:#978baa;font-size:10px}.remove{border:0;background:transparent;color:#aba1b9;font-size:20px;line-height:1;padding:5px;border-radius:6px}.remove:hover{color:#ffb8c2;background:#ffffff19}
+.status{white-space:pre-wrap;line-height:1.45;font-size:11px;max-height:100px;overflow:auto;color:#b2a6c2;margin:12px 0}.status.ok{color:#b1e8ce}.status.error{color:#ffa9b4}
+.bottom{display:flex;justify-content:space-between;gap:8px;align-items:center;padding-top:14px;border-top:1px solid #ffffff12;margin-top:19px}.bottom button{background:transparent;color:#b9aadd;border:0;padding:7px 2px;font-size:11px}.bottom button:hover{color:white}.foot{color:#766c83;font-size:10px;line-height:1.5;margin-top:9px}
+</style></head>
+<body><main>
+ <div class="head"><div class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path d="M3 14v-4m4 8V6m4 14V4m4 11V9m4 9V6"/></svg><span>AURA <b>LYRICS</b></span></div><span class="chip">TTML LIBRARY</span></div>
+ <h1>Make every word<br/>feel alive.</h1><p>Add your own synced TTML. Each track is matched locally in Apple Music Web and displayed with cinematic highlighting.</p>
+ <label class="drop" id="drop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 16V4m-5 5 5-5 5 5M4 15v5h16v-5"/></svg><strong>Drop your .ttml files here</strong><small>Or click to browse multiple files</small><input type="file" id="files" accept=".ttml" multiple></label>
+ <div class="controls"><button class="btn" id="folder">✦ Import a folder</button><button class="btn primary" id="open">↗ Open Apple Music</button></div>
+ <input type="file" id="folderInput" accept=".ttml" webkitdirectory multiple hidden />
+ <div class="counter"><b>Your lyrics library</b><span class="badge" id="count">0 tracks</span></div>
+ <input class="search" id="search" type="search" placeholder="Search imported tracks…" autocomplete="off"/>
+ <div class="library" id="library"><p>Nothing imported yet.</p></div>
+ <div class="status" id="status" role="status"></div>
+ <div class="bottom"><button id="clear">Clear library</button><span class="foot">Private • Stored in your browser</span></div>
+ <div class="foot">Compatible with music.apple.com (Chrome/Edge). Uses its own lyrics overlay; cannot replace Apple's native iPhone or Windows-app lyrics view.</div>
+</main><script src="ttml-parser.js"></script><script src="popup.js"></script></body></html>
